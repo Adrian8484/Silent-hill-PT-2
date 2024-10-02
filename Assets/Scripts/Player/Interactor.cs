@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
+    // Variables publicas
+    public float interactionDistance;
+
     // Funcion de interacion
     public void Interaction()
     {
@@ -12,7 +15,7 @@ public class Interactor : MonoBehaviour
         {
             // Creamos un rayo desde la camara hacia el frente de ella
             RaycastHit _hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out _hit, 2f))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out _hit, interactionDistance))
             {
                 // Si el rayo colisionó con un objeto interactuable entonces interactuamos
                 if (_hit.collider.gameObject.GetComponent<InteractableObject>() != null)
