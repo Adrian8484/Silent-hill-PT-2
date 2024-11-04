@@ -38,7 +38,7 @@ public class HalllwayManager : MonoBehaviour
         yield return new WaitForSeconds(_time);
 
         //Desactivar el pasiilo anteroir 
-        if (hallwayindex < (0))
+        if (hallwayindex > 0)
         {
             hallways[hallwayindex - 1].gameObject.SetActive(false);
         }
